@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars Aim Trainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="menu-screen" id="menuScreen">
+        <h1>🎯 AIM TRAINER</h1>
+        <p>Dodge ve Aim Becerilerini Geliştir!</p>
+        <div class="difficulty-buttons">
+            <button class="diff-btn easy" onclick="startGame('easy')">
+                <span class="diff-title">KOLAY</span>
+                <span class="diff-desc">Yavaş hareket, orta aim</span>
+            </button>
+            <button class="diff-btn medium" onclick="startGame('medium')">
+                <span class="diff-title">ORTA</span>
+                <span class="diff-desc">Hızlı hareket, iyi aim</span>
+            </button>
+            <button class="diff-btn hard" onclick="startGame('hard')">
+                <span class="diff-title">ÇOK ZOR</span>
+                <span class="diff-desc">Mükemmel aim ve dodge!</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="game-screen" id="gameScreen">
+        <div class="stats">
+            <div class="stat">
+                <span class="label">Skor:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">HP:</span>
+                <div class="hp-bar">
+                    <div class="hp-fill" id="playerHpBar"></div>
+                </div>
+                <span id="playerHp">4000</span>
+            </div>
+            <div class="stat">
+                <span class="label">Bot HP:</span>
+                <div class="hp-bar">
+                    <div class="hp-fill bot-hp" id="botHpBar"></div>
+                </div>
+                <span id="botHp">4000</span>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="controls">
+            <div class="joystick-container" id="joystickContainer">
+                <div class="joystick-base">
+                    <div class="joystick-stick" id="joystickStick"></div>
+                </div>
+            </div>
+            <div class="fire-button" id="fireButton">
+                <span>ATEŞ</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-over-screen" id="gameOverScreen">
+        <h1 id="resultText">KAZANDIN!</h1>
+        <div class="final-stats">
+            <p>Final Skor: <span id="finalScore">0</span></p>
+            <p>Isabet Oranı: <span id="accuracy">0%</span></p>
+        </div>
+        <button class="restart-btn" onclick="showMenu()">Ana Menü</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
